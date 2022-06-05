@@ -305,7 +305,8 @@ SSH into the control node and follow the steps below:
 	* `ansible-playbook /etc/ansible/roles/filebeat-playbook.yml`
 	* `ansible-playbook /etc/ansible/roles/metricbeat-playbook.yml`
 
-Note that  `filebeat-playbook.yml & metricbeat-playbook.yml` will only configue the servers whose IPs' are listed under [webservers] in the `/etc/ansible/hosts' file.
+Note that  `filebeat-playbook.yml & metricbeat-playbook.yml` will only configue the servers whose IPs' are listed under [webservers] in the `/etc/ansible/hosts` file.
+
 Also note that the `install_elk.yml` play will only configure the servers whose IPs' are listed under [elkservers] in the `/etc/ansible/hosts` file.
 
 After configuring the play file of a given playbook, run: `ansible-playbook [name-of-play].yml` to ensure a successful output. You may need to troubleshoot for errors. 
