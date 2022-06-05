@@ -279,14 +279,15 @@ SSH into the control node and follow the steps below:
 - Copy the playbook files to the Ansible Docker Container Located on the Jump Box.
 - Update the Ansible hosts file `/etc/ansible/hosts` file to include:
 
+```
 [webservers]
 10.10.0.5	 ansible_python_interpreter=/usr/bin/python3
 10.10.0.6	 ansible_python_interpreter=/usr/bin/python3
 
 [elkservers]
 10.0.0.4	 ansible_python_interpreter=/usr/bin/python3
-
 ```
+
 - Run the playbook and navigate to the Filebeat installation page on the ELK server GUI via the http://<elk-server-ip>:5601/app/kibana to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:
