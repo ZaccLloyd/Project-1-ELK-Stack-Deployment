@@ -245,7 +245,7 @@ This playbook is used to deploy Filebeat on each of the webservers to allow cent
 
 * Downloads and installs Filebeat 
 * Enables and configures the docker module to support Filebeat. 
-* Configures and starts filebeat
+* Configures and starts Filebeat
 
 #### Playbook 4: Metricbeat-playbook-yml
 The following playbook is used to deploy Metricbeat on the webservers to allow central monitoring of the ELK services. Metricbreat specifically collects OS and Service metrics on a given server. Metricbeat-playbook-yml implements the following:
@@ -290,10 +290,9 @@ SSH into the control node and follow the steps below:
 
 - Run the playbook and navigate to the Filebeat installation page on the ELK server GUI via the http://<elk-server-ip>:5601/app/kibana to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:
 - All Ansible files are located within the /etc/ansible directory within the Ansible Docker Container. 
-Imputing the Ip address of the target machine within the /etc/ansible/hosts file under 'webservers' or 'elkservers' will ensure that ansible will run the playbook on the given machine.
--  navigate to http://<elk-server-ip>:5601/app/kibana to see if the ELK server is running. 
+- Imputing the Ip address of the target machine within the /etc/ansible/hosts file under `webservers` or `elkservers` will ensure that ansible will run the playbook on the given machine.
+- Navigate to http://<elk-server-ip>:5601/app/kibana to see if the ELK server is running. 
 
 
 1. ssh into the Jump Box VM via your local machine `~$ ssh sysadmin@<Jump Box Public IP>`
@@ -306,8 +305,8 @@ Imputing the Ip address of the target machine within the /etc/ansible/hosts file
 	* `ansible-playbook /etc/ansible/roles/filebeat-playbook.yml`
 	* `ansible-playbook /etc/ansible/roles/metricbeat-playbook.yml`
 
-Note that  'filebeat-playbook.yml & metricbeat-playbook.yml' will only configue the servers whose IPs' are listed under [webservers] in the '/etc/ansible/hosts' file.
-Also note that the `install_elk.yml` play will only configure the servers whose IPs' are listed under [elkservers] in the '/etc/ansible/hosts' file.
+Note that  `filebeat-playbook.yml & metricbeat-playbook.yml` will only configue the servers whose IPs' are listed under [webservers] in the `/etc/ansible/hosts' file.
+Also note that the `install_elk.yml` play will only configure the servers whose IPs' are listed under [elkservers] in the `/etc/ansible/hosts` file.
 
-After configuring the play file of a given playbook, run: 'ansible-playbook [name-of-play].yml' to ensure a successful output. You may need to troubleshoot for errors. 
+After configuring the play file of a given playbook, run: `ansible-playbook [name-of-play].yml` to ensure a successful output. You may need to troubleshoot for errors. 
 	
