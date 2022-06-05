@@ -1,0 +1,26 @@
+#Bash Scripts 
+
+#Script to find the roulette dealer who was working at that specific day and time.
+ 
+	cat $1_Dealer_schedule | grep "$2:00:00 $3" | awk -F" " '{print $1, $2, $5, $6}' >> Dealers_working_during_losses 
+
+#Script to analyze the employee schedule to easily find the roulette dealer at a specific time.
+
+	cat $1_Dealer_schedule | grep "$2" | awk -F" " '{print $1, $2, $5, $6}'
+
+#Script that can distinguish between time, date and game played. 
+
+	#!/bin/bash
+
+	VAR1="Blackjack"
+	VAR2="$4"
+	VAR3="Roulette"
+	VAR4="Texas"
+
+	if [ "$VAR1" = "$VAR2" ]; then
+        	cat $1_Dealer_schedule | grep "$2:00:00 $3" |  awk -F" " '{print $3, $4}'
+	elif [ "$VAR3" = "$VAR2" ]; then
+        	cat $1_Dealer_schedule | grep "$2:00:00 $3" |  awk -F" " '{print $5, $6}'
+	elif [ "$VAR4" = "$VAR2" ]; then
+        	cat $1_Dealer_schedule | grep "$2:00:00 $3" |  awk -F" " '{print $7, $8}'
+	fi
