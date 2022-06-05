@@ -227,7 +227,7 @@ pentest.yml is used to set up DMWA servers running in a Docker container on each
 
 * Installs Docker 
 * Installs Python 3 
-* Installs Docker’s python module 
+* Installs Dockerâ€™s python module 
 * Downloads and launch the DVWA Docker container 
 * Enables the Docker service
 
@@ -236,7 +236,7 @@ This playbook is used to set up the ELK server within the docker container on th
 
 * Installs Docker 
 * Installs Python 3 
-* Installs Docker’s python module 
+* Installs Dockerâ€™s python module 
 * Increase memory to support the ELK stack
 * Download and launch the Docker ELK container
 
@@ -310,14 +310,3 @@ Also note that the `install_elk.yml` play will only configure the servers whose 
 
 After configuring the play file of a given playbook, run: 'ansible-playbook [name-of-play].yml' to ensure a successful output. You may need to troubleshoot for errors. 
 	
-
-
-
-
-
-
-
-
-
-
-
