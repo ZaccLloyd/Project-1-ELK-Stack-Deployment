@@ -178,7 +178,7 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly Available, in addition to restricting access to the network.
-- Load balancers protect server availablity, balancing requests across multiple servers while simultaniouly working as a health probe continually tests availabilty. 
+- Load balancers protect server availability, balancing requests across multiple servers while simultaneously working as a health probe continually tests availability. 
 - The jump box allows remote connections into the cloud network, while also minimise the attack surface through easy monitoring of all remote connections. The use of an SSH key means that only trusted IPs can gain access to the Jumpbox.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the systems configuration and system files.
@@ -216,18 +216,18 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- It ensures that machines are built and deployed in a consistent and timely manner. Consistent and timely system configuration and deployment ensures that the system exposure to human error is minimized and the attack surface is reduced.
-- Automatic configuration emphasises the ability for the system capacity for horizontal scaling dependent on system requirments.    
+- It ensures that machines are built and deployed in a consistent and timely manner. Consistent and timely system configuration and deployment ensures that the system exposure to human error is minimized, and the attack surface is reduced.
+- Automatic configuration emphasises the ability for the system capacity for horizontal scaling dependent on system requirements.    
 
 ### Playbooks
 The four playbooks above implement the following tasks:
 
 #### Playbook 1: pentest.yml
-pentest.yml is used to set up DMWA servers running in a Docker container on each of the web servies show in the diagram above.  It implements the following tasks:
+pentest.yml is used to set up DMWA servers running in a Docker container on each of the web services show in the diagram above.  It implements the following tasks:
 
 * Installs Docker 
 * Installs Python 3 
-* Installs Dockerâ€™s python module 
+* Installs Docker’s python module 
 * Downloads and launch the DVWA Docker container 
 * Enables the Docker service
 
@@ -236,7 +236,7 @@ This playbook is used to set up the ELK server within the docker container on th
 
 * Installs Docker 
 * Installs Python 3 
-* Installs Dockerâ€™s python module 
+* Installs Docker’s python module 
 * Increase memory to support the ELK stack
 * Download and launch the Docker ELK container
 
@@ -269,11 +269,11 @@ We have installed the following Beats on these machines:
 - Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- Filebeat collectsand ships log files and events then forwards them to Elasticsearch for indexing. e.g. Filebeat collects system.log files to monitor what commands are executed on a given machine. 
+- Filebeat collectsand ships log files and events then forward them to Elasticsearch for indexing. e.g. Filebeat collects system.log files to monitor what commands are executed on a given machine. 
 - Metricbeat collects and ships server metrics regarding the operating system and other running services and ships them to Elaticsearch for indexing. i.e. metricbeat collects metrics on MySQL regarding service details.   
 
 ### Using the Playbook
-In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
+To use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
 - Copy the playbook files to the Ansible Docker Container Located on the Jump Box.
@@ -287,7 +287,7 @@ SSH into the control node and follow the steps below:
 10.0.0.4	 ansible_python_interpreter=/usr/bin/python3
 
 ```
-- Run the playbook, and navigate to the Filebeat installation page on the ELK server GUI via the http://<elk-server-ip>:5601/app/kibana to check that the installation worked as expected.
+- Run the playbook and navigate to the Filebeat installation page on the ELK server GUI via the http://<elk-server-ip>:5601/app/kibana to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:
 - All Ansible files are located within the /etc/ansible directory within the Ansible Docker Container. 
@@ -308,7 +308,7 @@ Imputing the Ip address of the target machine within the /etc/ansible/hosts file
 Note that  'filebeat-playbook.yml & metricbeat-playbook.yml' will only configue the servers whose IPs' are listed under [webservers] in the '/etc/ansible/hosts' file.
 Also note that the `install_elk.yml` play will only configure the servers whose IPs' are listed under [elkservers] in the '/etc/ansible/hosts' file.
 
-After configuring the play file of a given playbook, run: 'ansible-playbook [name-of-play].yml' to ensure a successfull output. You may need to troubleshoot for errors. 
+After configuring the play file of a given playbook, run: 'ansible-playbook [name-of-play].yml' to ensure a successful output. You may need to troubleshoot for errors. 
 	
 
 
